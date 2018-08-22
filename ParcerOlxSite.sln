@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 5.1
-VisualStudioVersion = 12.0.20827.3
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcerOlxSite", "ParcerOlxSite\ParcerOlxSite.csproj", "{D46982FE-1FCF-46E2-A342-8175CD96EF17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{5A30BAA9-6D95-49E2-A1A2-1ACD4A30D4F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,5 +17,15 @@ Global
 		{D46982FE-1FCF-46E2-A342-8175CD96EF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D46982FE-1FCF-46E2-A342-8175CD96EF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D46982FE-1FCF-46E2-A342-8175CD96EF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A30BAA9-6D95-49E2-A1A2-1ACD4A30D4F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A30BAA9-6D95-49E2-A1A2-1ACD4A30D4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A30BAA9-6D95-49E2-A1A2-1ACD4A30D4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A30BAA9-6D95-49E2-A1A2-1ACD4A30D4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7CF8F6B-9669-4A48-83F5-2D7DC1C32EF9}
 	EndGlobalSection
 EndGlobal

@@ -36,12 +36,15 @@ namespace ParcerOlxSite.Common
 		private void PrintProduct(HtmlDocument doc)
 		{
 			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(".//tr[@class='wrap']");
+            
 //			HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(".//[not(parent::table[@class='fixed offers breakword no-results-table'])]//tr[@class='wrap']");
 			if (nodes == null)
 				return;
 			foreach (HtmlNode title in nodes)
 			{
-				string location = "";
+                string s = title.InnerHtml;
+
+                string location = "";
 				try
 				{
 					HtmlNode n = title.SelectSingleNode(".//td[@valign='bottom']");
@@ -57,8 +60,12 @@ namespace ParcerOlxSite.Common
 					{
 						id = int.Parse(title.SelectSingleNode(".//table").Attributes["data-id"].Value);
 					} catch {}
-					
-					HtmlNode node = title.SelectSingleNode(".//h3[@class='x-large lheight20 margintop5']");
+
+                    string sNodePrev1 = ".//h3[@class='x-large lheight20 margintop5']";
+                    string sNodePrev2 = ".//h3[@class='lheight22 margintop5']";
+
+                    HtmlNode node = title.SelectSingleNode(sNodePrev1) ?? title.SelectSingleNode(sNodePrev2); ;
+
 					string sTitle = node.SelectSingleNode(".//strong").InnerText;
 					string href = node.SelectSingleNode(".//a").Attributes["href"].Value;
 					node = title.SelectSingleNode(".//p[@class='price']").SelectSingleNode(".//strong");
