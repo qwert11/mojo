@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+//using Data;
 
 namespace ParcerOlxSite
 {
@@ -23,10 +24,12 @@ namespace ParcerOlxSite
 	{
 		private static void ShowBalloon(string title, string body)
 		{
-			NotifyIcon notifyIcon = new NotifyIcon();
-			notifyIcon.Icon = SystemIcons.Exclamation;
-			notifyIcon.Visible = true;
-			notifyIcon.ShowBalloonTip(20000, title, body, ToolTipIcon.Info);
+            NotifyIcon notifyIcon = new NotifyIcon
+            {
+                Icon = SystemIcons.Exclamation,
+                Visible = true
+            };
+            notifyIcon.ShowBalloonTip(20000, title, body, ToolTipIcon.Info);
 		}
 		private static string GetShortInfoAD(IEnumerable<AD> list, int maxCount)
 		{
@@ -68,7 +71,10 @@ namespace ParcerOlxSite
 		
 		public static void Main(string[] args)
 		{
-			while (true)
+            //var l = Data.GoogleSheetProvider<Data.MyData>.Get<Data.MyData>("1kE61PAN5zG_Ygx98PmaRxKZp0L1_NxSelEfOFC2owJs", "Class Data!A1:B");
+            Data.GoogleSheetProvider<Data.MyData>.Set("1kE61PAN5zG_Ygx98PmaRxKZp0L1_NxSelEfOFC2owJs", "Class Data!A1:B");
+
+            while (true)
 			{	
 				IConnectionStringBuilder conn = new Connection("https://www.olx.ua");
 				ICPath path1 = new CPath("/elektronika/kompyutery-i-komplektuyuschie/komplektuyuschie-i-aksesuary/protsessory/dnepr/q-5450/" +

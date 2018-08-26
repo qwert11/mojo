@@ -110,14 +110,13 @@ namespace ParcerOlxSite.Common
 			SaveToLog(content, "logProduct.txt");
 			RemoveOffset(doc);
 			PrintProduct(doc);
-			
-			string href = "";
-			if (TryParseNextPage(doc, out href))
-			{
-				Thread.Sleep(new Random().Next(1000, 3000));
-				Select(new CPath(href));
-			}
-		}
+
+            if (TryParseNextPage(doc, out string href))
+            {
+                Thread.Sleep(new Random().Next(1000, 3000));
+                Select(new CPath(href));
+            }
+        }
 		public ParcerProduct(List<AD> list_)
 		{
 			list = list_;
